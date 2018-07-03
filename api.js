@@ -26,6 +26,7 @@ function listInStock (res) {
     return item.avail === "In stock";
   });
 
+  res.writeHead(200, {"Content-Type": "text/json"});
   res.end(JSON.stringify(inStock));
 }
 
@@ -35,5 +36,6 @@ function listOnBackOrder (res) {
     return item.avail === "On back order";
   });
 
+  res.writeHead(200, {"Content-Type": "text/json"});
   res.end(JSON.stringify(onOrder));
 }
